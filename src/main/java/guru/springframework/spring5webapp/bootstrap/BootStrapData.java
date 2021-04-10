@@ -42,9 +42,11 @@ public class BootStrapData implements CommandLineRunner {
         Book book2 = new Book("Oath of Vayuputhras","20001010");
         author2.getBooks().add(book2);
         book2.getAuthors().add(author2);
+        publisher1.getBooks().add(book2);
 
         authorRepository.save(author2);
         bookRepository.save(book2);
+        publisherRepository.save(publisher1);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Books: " + bookRepository.count());
